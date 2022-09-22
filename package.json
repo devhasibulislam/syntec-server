@@ -1,0 +1,29 @@
+{
+  "name": "syntec-server",
+  "version": "1.0.0",
+  "description": "Modern responsive business website server side.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasibulislam999/syntec-server.git"
+  },
+  "keywords": [
+    "async",
+    "schema",
+    "controller",
+    "services",
+    "routes",
+    "utils",
+    "promise",
+    "rest-api"
+  ],
+  "author": "Hasibul Islam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hasibulislam999/syntec-server/issues"
+  },
+  "homepage": "https://github.com/hasibulislam999/syntec-server#readme"
+}
