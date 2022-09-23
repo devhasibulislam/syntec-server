@@ -1,0 +1,5 @@
+# BCrypt.JS used to password validation:
+https://www.loginradius.com/blog/engineering/hashing-user-passwords-using-bcryptjs/
+
+# Multer.JS easy file upload:
+https://blog.logrocket.com/multer-nodejs-express-upload-file/
