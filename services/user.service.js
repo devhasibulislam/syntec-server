@@ -18,6 +18,7 @@ exports.postAnUserToServiceForLogin = async (data) => {
     const isValidPassword = bcrypt.compareSync(data.password, user.password);
     if (isValidPassword) {
       console.log("Password is correct!");
+      return result;
     } else {
       console.log("Password is wrong!");
     }
