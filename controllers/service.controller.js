@@ -2,6 +2,7 @@
 const {
   postAServiceToService,
   updateAServiceFromService,
+  deleteAServiceFromService,
 } = require("../services/service.service");
 
 /* insert service to db */
@@ -45,6 +46,22 @@ exports.updateAServiceFromController = async (req, res, next) => {
       acknowledgement: true,
       message: "Accepted",
       description: "Specified data updated to DB",
+      data: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/* delete specific servce from db */
+exports.deleteAServiceFromController = async (req, res, next) => {
+  try {
+    const result = await deleteAServiceFromService(req.params.id);
+
+    res.status(202).json({
+      acknowledgement: true,
+      message: "Accepted",
+      message: "Specified data deleted",
       data: result,
     });
   } catch (error) {
