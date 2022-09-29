@@ -4,6 +4,7 @@ const express = require("express");
 /* internal import */
 const {
   postAServiceToController,
+  displayAllServicesFromController,
 } = require("../controllers/service.controller");
 
 /* internal import */
@@ -11,6 +12,9 @@ const {
 /* router level connection */
 const router = express.Router();
 
-router.route("/").get(postAServiceToController).post();
+router
+  .route("/")
+  .get(displayAllServicesFromController)
+  .post(postAServiceToController);
 
 module.exports = router;
