@@ -29,7 +29,7 @@ exports.postAnUserToControllerForLogin = async (req, res, next) => {
       acknowledgement: true,
       message: "Accepted",
       description: "User signed in successfully",
-    //   data: result,
+      data: result,
     });
   } catch (error) {
     next(error);
