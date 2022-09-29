@@ -19,3 +19,9 @@ exports.updateAServiceFromService = async (id, data) => {
   });
   return result;
 };
+
+/* delete specific service from DB */
+exports.deleteAServiceFromService = async (id) => {
+  const result = await Service.findByIdAndDelete(id);
+  return result;
+};
