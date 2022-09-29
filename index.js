@@ -13,9 +13,12 @@ require("dotenv").config();
 /* internal imports */
 const errorHandler = require("./middlewares/error.middleware");
 const dbConnection = require("./utils/db.util");
+
+/* router level routers */
 const avatarRouter = require("./routes/avatar.route");
 const thumbnailRouter = require("./routes/thumbnail.route");
 const userRouter = require("./routes/user.route");
+const serviceRouter = require("./routes/service.route");
 
 /* application level connection */
 const app = express();
@@ -30,6 +33,7 @@ app.use(express.static("public"));
 app.use("/avatar", avatarRouter);
 app.use("/thumbnail", thumbnailRouter);
 app.use("/user", userRouter);
+app.use("/service", serviceRouter);
 
 /* global error handler */
 app.use(errorHandler);
