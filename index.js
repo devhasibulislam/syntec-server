@@ -15,10 +15,11 @@ const errorHandler = require("./middlewares/error.middleware");
 const dbConnection = require("./utils/db.util");
 const avatarRouter = require("./routes/avatar.route");
 const thumbnailRouter = require("./routes/thumbnail.route");
+const userRouter = require("./routes/user.route");
 
 /* application level connection */
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 /* middleware connection */
 app.use(cors());
@@ -28,6 +29,7 @@ app.use(express.static("public"));
 /* router connection */
 app.use("/avatar", avatarRouter);
 app.use("/thumbnail", thumbnailRouter);
+app.use("/user", userRouter);
 
 /* global error handler */
 app.use(errorHandler);
