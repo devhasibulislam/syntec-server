@@ -1,5 +1,6 @@
-/* external import */
+/* external imports */
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 // validate email
 const validateEmail = function (email) {
@@ -46,6 +47,25 @@ const userSchema = mongoose.Schema(
   },
   { timestamps: true }
 );
+
+/* middlewares to encrypt password */
+userSchema.pre("save", async function (next) {
+  try {
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(this.password, salt);
+    this.password = hash;
+  } catch (error) {
+    next(error);
+  }
+});
+
+userSchema.post("save", async function (next) {
+  try {
+    console.log("Password encryption successful.");
+  } catch (error) {
+    next(error);
+  }
+});
 
 const User = new mongoose.model("Users", userSchema);
 
