@@ -5,6 +5,7 @@ const express = require("express");
 const {
   postAServiceToController,
   displayAllServicesFromController,
+  updateAServiceFromController,
 } = require("../controllers/service.controller");
 
 /* internal import */
@@ -16,5 +17,7 @@ router
   .route("/")
   .get(displayAllServicesFromController)
   .post(postAServiceToController);
+
+router.route("/:id").patch(updateAServiceFromController);
 
 module.exports = router;
